@@ -30,5 +30,11 @@ def output_xml_contents_to_console(xml_file_name):
         print xml_file.read()
 
 
+def print_root_children_to_console(xml_root):
+    for child in xml_root:
+        print 'child.tag is : ' + str(child.tag)
+        print 'child.attrib is ' + str(child.attrib)
+
+
 
 # / eof / #

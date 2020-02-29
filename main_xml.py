@@ -27,6 +27,9 @@ for filtered_file_name in filtered_file_list:
     print(type(xml_root))
 
 
+print_root_children_to_console(xml_root)
+
+
 
 
 

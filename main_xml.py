@@ -1,12 +1,18 @@
+from all_paths_all_files import xml_sandbox_log_file, xml_sandbox_log_level
 from directories import *
 from file_extensions import *
+from log_methods import shutdown_logging
+# from log_methods import configure_logging
 from xml_methods import *
 
 filter_extension = xml_extension
 
 # Initialize the working directories and print to console
-cdir, pdir, odir, xdir = initialize_directories()
-print_directories(cdir, pdir, odir, xdir)
+cdir, pdir, odir, xdir, ldir = initialize_directories()
+print_directories(cdir, pdir, odir, xdir, ldir)
+
+# # Configure logging
+# configure_logging(xml_sandbox_log_file, xml_sandbox_log_level)
 
 # Get list() of files from directory, print it
 xdir_list = list_of_files_in_dir(xdir)
@@ -30,7 +36,5 @@ for filtered_file_name in filtered_file_list:
 print_root_children_to_console(xml_root)
 
 
-
-
-
+shutdown_logging()
 # / eof / #

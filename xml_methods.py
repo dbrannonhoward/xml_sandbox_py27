@@ -1,6 +1,11 @@
 import xml.etree.ElementTree as ET
+from all_paths_all_files import *
+from directories import *
 from file_extensions import xml_extension
 import os
+
+os.chdir(parent_path)
+os.chdir(xml_path)
 
 
 def change_cwd_to_xml_dir(xml_files_dir):

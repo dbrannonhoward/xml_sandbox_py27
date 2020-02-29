@@ -41,5 +41,9 @@ def print_root_children_to_console(xml_root):
         print 'child.attrib is ' + str(child.attrib)
 
 
+def print_elements_by_tag(xml_root, tag_string):
+    for tag in xml_root.iter(tag_string):
+        print tag.attrib
+
 
 # / eof / #

@@ -26,14 +26,15 @@ change_cwd_to_xml_dir(xdir)
 print 'The current working directory is : ' + str(os.getcwd())
 
 # Check to see if any file in the dir is an XML file
-# Print the contents to terminal
+# Iterates over the existing XML files in the working directory
 for filtered_file_name in filtered_file_list:
     print 'The filtered file name is ' + str(filtered_file_name)
     xml_root = get_xml_tree_root(filtered_file_name)
-    print(type(xml_root))
-
-
-print_root_children_to_console(xml_root)
+    # print(type(xml_root))
+    # print_root_children_to_console(xml_root)
+    print_elements_by_tag(xml_root, 'country')
+    print_elements_by_tag(xml_root, 'neighbor')
+    print_elements_by_tag(xml_root, 'rank')
 
 
 shutdown_logging()

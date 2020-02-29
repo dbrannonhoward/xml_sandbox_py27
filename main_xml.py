@@ -15,6 +15,7 @@ print 'The file list is : ' + str(xdir_list)
 filtered_file_list = filter_file_list_by_ext(xdir_list, filter_extension)
 print filtered_file_list
 
+# Check to see if a file is XML
 
 
 # / eof / #

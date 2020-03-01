@@ -1,9 +1,6 @@
 import xml.etree.ElementTree as ET
-from Constants.file_extensions import xml_extension
+from Constants.file_extension_constants import xml_extension
 import os
-
-
-list_of_xml_tags = ['data', 'country', 'rank', 'year', 'gdppc', 'neighbor']
 
 
 def change_cwd_to_xml_dir(xml_files_dir):
@@ -43,6 +40,14 @@ def output_xml_contents_to_console(xml_file_name):
 def print_elements_by_tag(xml_root, tag_string):
     for tag in xml_root.iter(tag_string):
         print tag.attrib
+
+
+def print_sample_by_index(sample_xml_root, a_depth, b_depth):
+    print 'todo'
+
+
+def print_simple_by_index(simple_xml_root, a_depth, b_depth):
+    print 'todo'
 
 
 # / eof / #

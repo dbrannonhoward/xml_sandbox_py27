@@ -1,4 +1,4 @@
-from Constants.all_paths_all_files import log_path, output_path, xml_path
+from Constants.path_and_file_constants import log_path, output_path, xml_path
 import os
 
 

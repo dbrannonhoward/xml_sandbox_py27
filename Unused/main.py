@@ -1,6 +1,6 @@
 from directories import filter_file_list_by_ext, initialize_directories, \
     list_of_files_in_dir, print_directories
-from Constants.file_extensions import *
+from Constants.file_extension_constants import *
 
 filter_extension = xml_extension
 

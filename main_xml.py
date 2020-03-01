@@ -1,3 +1,4 @@
+from Constants.xml_tag_constants import *
 from directories import *
 from Logging.log_methods import shutdown_logging
 # from log_methods import configure_logging
@@ -30,8 +31,12 @@ for filtered_file_name in filtered_file_list:
     xml_root = get_xml_tree_root(filtered_file_name)
     # print(type(xml_root))
     # print_root_children_to_console(xml_root)
-    for xml_tag in list_of_xml_tags:
-        print_elements_by_tag(xml_root, xml_tag)
+    # for xml_tag in list_of_xml_tags:
+    #     print 'Searching for xml_tag ' + str(xml_tag)
+    #     print_elements_by_tag(xml_root, xml_tag)
+    for a_index in range(2):
+        for b_index in range(4):
+            print_simple_by_index(xml_root, a_index, b_index)
 
 
 shutdown_logging()

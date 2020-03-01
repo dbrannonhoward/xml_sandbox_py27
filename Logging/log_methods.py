@@ -1,4 +1,4 @@
-from Constants.all_paths_all_files import *
+from Constants.path_and_file_constants import *
 from directories import *
 import logging
 import os

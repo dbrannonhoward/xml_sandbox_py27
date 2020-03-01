@@ -1,9 +1,7 @@
-from all_paths_all_files import xml_sandbox_log_file, xml_sandbox_log_level
 from directories import *
-from file_extensions import *
-from log_methods import shutdown_logging
+from Logging.log_methods import shutdown_logging
 # from log_methods import configure_logging
-from xml_methods import *
+from XML.xml_methods import *
 
 filter_extension = xml_extension
 
@@ -32,9 +30,8 @@ for filtered_file_name in filtered_file_list:
     xml_root = get_xml_tree_root(filtered_file_name)
     # print(type(xml_root))
     # print_root_children_to_console(xml_root)
-    print_elements_by_tag(xml_root, 'country')
-    print_elements_by_tag(xml_root, 'neighbor')
-    print_elements_by_tag(xml_root, 'rank')
+    for xml_tag in list_of_xml_tags:
+        print_elements_by_tag(xml_root, xml_tag)
 
 
 shutdown_logging()

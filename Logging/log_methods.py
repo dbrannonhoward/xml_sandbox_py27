@@ -1,7 +1,5 @@
-from all_paths_all_files import *
+from Constants.all_paths_all_files import *
 from directories import *
-import all_paths_all_files
-import ConfigParser
 import logging
 import os
 

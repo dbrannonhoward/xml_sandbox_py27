@@ -1,12 +1,17 @@
+from Constants.xml_tag_constants import *
 from directories import *
-from file_extensions import *
-from xml_methods import *
+from Logging.log_methods import shutdown_logging
+# from log_methods import configure_logging
+from XML.xml_methods import *
 
 filter_extension = xml_extension
 
 # Initialize the working directories and print to console
-cdir, pdir, odir, xdir = initialize_directories()
-print_directories(cdir, pdir, odir, xdir)
+cdir, pdir, odir, xdir, ldir = initialize_directories()
+print_directories(cdir, pdir, odir, xdir, ldir)
+
+# # Configure logging
+# configure_logging(xml_sandbox_log_file, xml_sandbox_log_level)
 
 # Get list() of files from directory, print it
 xdir_list = list_of_files_in_dir(xdir)
@@ -20,17 +25,19 @@ change_cwd_to_xml_dir(xdir)
 print 'The current working directory is : ' + str(os.getcwd())
 
 # Check to see if any file in the dir is an XML file
-# Print the contents to terminal
+# Iterates over the existing XML files in the working directory
 for filtered_file_name in filtered_file_list:
     print 'The filtered file name is ' + str(filtered_file_name)
     xml_root = get_xml_tree_root(filtered_file_name)
-    print(type(xml_root))
+    # print(type(xml_root))
+    # print_root_children_to_console(xml_root)
+    # for xml_tag in list_of_xml_tags:
+    #     print 'Searching for xml_tag ' + str(xml_tag)
+    #     print_elements_by_tag(xml_root, xml_tag)
+    for a_index in range(2):
+        for b_index in range(4):
+            print_simple_by_index(xml_root, a_index, b_index)
 
 
-print_root_children_to_console(xml_root)
-
-
-
-
-
+shutdown_logging()
 # / eof / #

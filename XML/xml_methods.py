@@ -30,24 +30,51 @@ def output_xml_contents_to_console(xml_file_name):
         print xml_file.read()
 
 
-# def print_root_children_to_console(xml_root):
-#     for child in xml_root:
-#         print 'child.tag is : ' + str(child.tag)
-#         print 'child.attrib is ' + str(child.attrib)
-
-
 # Print elements in the xml tree with the tag_string
 def print_elements_by_tag(xml_root, tag_string):
+    print 'Searching xml_root for ' + str(tag_string)
     for tag in xml_root.iter(tag_string):
         print tag.attrib
 
 
-def print_sample_by_index(sample_xml_root, a_depth, b_depth):
-    print 'todo'
+def print_by_iter(xml_root, iter_string):
+    print 'Printing by iter : ' + str(iter_string)
+    for some_iter in xml_root.iter(iter_string):
+        print some_iter.tag  # this is a str
+        print ' is of type ' + str(type(some_iter.tag))
+        print some_iter.attrib  # this is a dict
+        print ' is of type ' + str(type(some_iter.attrib))
 
 
-def print_simple_by_index(simple_xml_root, a_depth, b_depth):
-    print 'todo'
+def print_all_values_with_key(xml_root, iter_string, key_filter):
+    print 'Printing all dict values where key is : ' + str(key_filter)
+    for some_iter in xml_root.iter(iter_string):
+        attrib_dict = some_iter.attrib  # this is a dict
+        for key in attrib_dict:
+            if key == key_filter:
+                print attrib_dict[key]
+
+
+def print_root_attrib(xml_root):
+    print 'Printing root attributes'
+    print xml_root.attrib
+
+
+def print_root_children(xml_root):
+    print 'Printing root children tags'
+    for child in xml_root:
+        print child.tag
+
+
+def print_root_children_attribs(xml_root):
+    print 'Printing root children attributes'
+    for child in xml_root:
+        print child.attrib
+
+
+def print_root_tag(xml_root):
+    print 'Printing root tag'
+    print xml_root.tag
 
 
 # / eof / #
